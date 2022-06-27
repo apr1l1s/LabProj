@@ -12,19 +12,27 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using LabProj.Pages;
-
-namespace LabProj
+using LabProj.Model;
+namespace LabProj.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для Login.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Login : Page
     {
-        public MainWindow()
+        public Login()
         {
             InitializeComponent();
-            MainWindowFrame.Navigate(new Login());
+        }
+        private void Log(object sender, RoutedEventArgs args)
+        {
+            if (LogBox.Text != "" && PassBox.Password != "")
+            {
+                using(var db = new LabDBEntities())
+                {
+                    
+                }
+            }
         }
     }
 }
